@@ -40,5 +40,4 @@ function ProductCard({ product }: IProps) {
         </div>
     );
 }
-
 export default ProductCard;

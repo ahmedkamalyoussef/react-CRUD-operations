@@ -228,3 +228,31 @@ export const productsList = [
         }
     }
 ];
+
+
+export const formInputList=[
+    {
+        id:"title",
+        name:"title",
+        lable:"Product Title",
+        type:"text"
+    },
+    {
+        id:"description",
+        name:"description",
+        lable:"Product Description",
+        type:"text"
+    },
+    {
+        id:"image",
+        name:"imageURL",
+        lable:"Image Url",
+        type:"text"
+    },
+    {
+        id:"price",
+        name:"price",
+        lable:"Product Price",
+        type:"text"
+    },
+]
