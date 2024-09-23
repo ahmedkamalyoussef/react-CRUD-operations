@@ -6,7 +6,6 @@ import Button from './Components/UI/Button';
 import Input from './Components/UI/Input';
 import { IProduct } from './Interfaces/IProduct';
 import { ProductValidation } from './Validations/ProductValidation';
-import { IValidProduct } from './Interfaces/IValidProduct';
 import ErrMsg from './Components/UI/ErrMsg';
 
 function App() {
@@ -24,10 +23,10 @@ function App() {
   const [isOpen, closeModal] = useState(false)
   const [product, setProduct] = useState<IProduct>(defaultProduct);
   const [errs, setErrs] = useState({
-    title: "",
-    description: "",
-    imageURL: "",
-    price: ""
+    title: '',
+    description: '',
+    imageURL: '',
+    price: ''
   });
   function open() {
     closeModal(true)
@@ -57,7 +56,6 @@ function App() {
       ...product,
       [name]: value
     });
-
       setErrs({
         ...errs,
         [name]:''
@@ -68,7 +66,7 @@ function App() {
     <div className="flex flex-col">
       <label htmlFor={input.id} className='mb-[1px] text-sm font-medium text-gray-700'>{input.lable}</label>
       <Input type={input.type} id={input.id} name={input.name} onChange={onChangeHandler} />
-      <ErrMsg message={errs[input.name]} />
+      <ErrMsg key={input.id} message={errs[input.name as keyof typeof errs]} />
     </div>
   ));
   return (
