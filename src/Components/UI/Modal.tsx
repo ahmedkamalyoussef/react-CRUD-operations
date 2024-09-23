@@ -1,5 +1,5 @@
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 interface IProps {
     children: ReactNode,
     isOpen: boolean,
@@ -7,8 +7,10 @@ interface IProps {
     title?: string
 }
 function Modal({ children, isOpen, title }: IProps) {
-
-
+    const [closed, closeModal] = useState(false)
+    function close() {
+        closeModal(false)
+    }
     return (
         <>
             <Dialog open={isOpen} as="div" className="relative z-10 focus:outline-none" onClose={close}>

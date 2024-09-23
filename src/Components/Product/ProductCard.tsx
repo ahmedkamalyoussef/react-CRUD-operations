@@ -23,10 +23,10 @@ function ProductCard({ product }: IProps) {
                 })}
             </div>
             <div className="flex items-center justify-between">
-                <span>{price}$</span>
+                <span className="text-xs md:text-sm">{price}$</span>
                 <div className="flex items-center">
-                <Image imgeURL={category.imageURL} alt="prod" classes="rounded-full w-10 h-10 object-fill mx-2" />
-                <p>{category.name}</p>
+                <Image imgeURL={category.imageURL} alt="prod" classes="rounded-full w-7 h-7 object-fill mx-2 md:w-10 md:h-10" />
+                <p className="text-xs md:text-sm">{category.name}</p>
 
                 </div>
             </div>
