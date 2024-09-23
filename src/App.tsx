@@ -5,6 +5,9 @@ import { formInputList, productsList } from './Data/Index'
 import Button from './Components/UI/Button';
 import Input from './Components/UI/Input';
 import { IProduct } from './Interfaces/IProduct';
+import { ProductValidation } from './Validations/ProductValidation';
+import { IValidProduct } from './Interfaces/IValidProduct';
+import ErrMsg from './Components/UI/ErrMsg';
 
 function App() {
   const defaultProduct = {
@@ -20,10 +23,15 @@ function App() {
   };
   const [isOpen, closeModal] = useState(false)
   const [product, setProduct] = useState<IProduct>(defaultProduct);
+  const [errs, setErrs] = useState({
+    title: "",
+    description: "",
+    imageURL: "",
+    price: ""
+  });
   function open() {
     closeModal(true)
   }
-
   function close() {
     closeModal(false)
   }
@@ -33,7 +41,15 @@ function App() {
   };
   const onSubmetHandler = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log(product)
+    const errors = ProductValidation({
+      title: product.title,
+      description: product.description,
+      imageURL: product.imageURL,
+      price: product.price
+    })
+    const notHasErrMsgs = Object.values(errors).every(value => value === "");
+    if (!notHasErrMsgs)
+      setErrs(errors);
   }
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -41,23 +57,26 @@ function App() {
       ...product,
       [name]: value
     });
+
+      setErrs({
+        ...errs,
+        [name]:''
+      });
   };
   const products = productsList.map(p => <ProductCard key={p.id} product={p} />);
   const inputs = formInputList.map(input => (
     <div className="flex flex-col">
       <label htmlFor={input.id} className='mb-[1px] text-sm font-medium text-gray-700'>{input.lable}</label>
       <Input type={input.type} id={input.id} name={input.name} onChange={onChangeHandler} />
+      <ErrMsg message={errs[input.name]} />
     </div>
-  )
-  );
+  ));
   return (
     <main className='container'>
       <Button classes="bg-indigo-700 hover:bg-indigo-800" onClick={open}>Add</Button>
-
       <div className='m-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-2 p-2 rounded-md '>
         {products}
       </div>
-
       <Modal isOpen={isOpen} closeModal={close} title='Add new product'>
         <form className="space-y-3" onSubmit={onSubmetHandler}>
           {inputs}
