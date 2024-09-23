@@ -8,19 +8,19 @@ interface IProps {
 }
 
 function ProductCard({ product }: IProps) {
-    const { category, colors, description, imageURL, price, title, id } = product;
+    const { category, colors, description, imageURL, price, title } = product;
     return (
         <div className="max-w-40 text-xs md:text-sm md:w-50 md:max-w-lg lg:w-60 mx-auto border rounded-md p-2 flex flex-col h-full">
             <Image imgeURL={imageURL} alt="prod" classes="rounded-md max-h-60" />
             <h3 className="flex-grow">{title}</h3>
             <p className="flex-grow">{TextSlicer(description)}</p>
             <div className="flex items-center my-4 space-x-2 flex-grow">
-                {colors.map((color) => {
+                {colors.map((color,index) => {
                     return (
                         <span
                             className="w-5 h-5 rounded-full cursor-pointer border"
                             style={{ backgroundColor: color }}
-                            key={id}
+                            key={index}
                         ></span>
                     );
                 })}
