@@ -1,5 +1,6 @@
 import { IProduct } from "../../Interfaces/IProduct";
 import { TextSlicer } from "../../Utils/TextSlicerFunction";
+import ColorCircle from "../Color/ColorCircle";
 import Button from "../UI/Button";
 import Image from "./Image";
 
@@ -17,11 +18,7 @@ function ProductCard({ product }: IProps) {
             <div className="flex items-center my-4 space-x-2 flex-grow">
                 {colors.map((color,index) => {
                     return (
-                        <span
-                            className="w-5 h-5 rounded-full cursor-pointer border"
-                            style={{ backgroundColor: color }}
-                            key={index}
-                        ></span>
+                        <ColorCircle color={color} key={index}/>
                     );
                 })}
             </div>

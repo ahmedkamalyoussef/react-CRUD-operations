@@ -256,3 +256,37 @@ export const formInputList=[
         type:"text"
     },
 ]
+
+
+export const Colors: string[] = [
+    "#FF5733", // Red-Orange
+    "#33FF57", // Lime Green
+    "#3357FF", // Blue
+    "#FF33A1", // Pink
+    "#33FFF1", // Cyan
+    "#FFD733", // Yellow
+    "#FF5733", // Orange
+    "#8D33FF", // Purple
+    "#FFB833", // Amber
+    "#33FFB8", // Mint Green
+    "#B833FF", // Violet
+    "#33B8FF", // Sky Blue
+    "#FF338D", // Magenta
+    "#5733FF", // Indigo
+    "#FF3357",  // Coral
+    "#FF9333", // Light Orange
+    "#33FF93", // Light Green
+    "#3393FF", // Light Blue
+    "#FF33D7", // Hot Pink
+    "#33FFD7", // Aquamarine
+    "#D7FF33", // Lime Yellow
+    "#D733FF", // Electric Purple
+    "#FF33B8", // Deep Pink
+    "#33FF5E", // Fresh Green
+    "#5E33FF", // Electric Indigo
+    "#FFB833", // Honey Yellow
+    "#33A1FF", // Azure
+    "#FF3385", // Deep Rose
+    "#33FFC4", // Turquoise
+    "#FFC433"  // Gold
+];
