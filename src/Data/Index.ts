@@ -7,6 +7,7 @@ export const productsList = [
         price: "15.99",
         colors: ["#FFFFFF", "#000000", "#FF5733"],
         category: {
+            id: "1",
             name: "Clothing",
             imageURL: "https://th.bing.com/th?id=OIF.4mKvbMCaR9%2bNDhGfJyI8og&rs=1&pid=ImgDetMain"
         }
@@ -19,6 +20,7 @@ export const productsList = [
         price: "49.99",
         colors: ["#2E4053", "#D5DBDB"],
         category: {
+            id: "1",
             name: "Clothing",
             imageURL: "https://th.bing.com/th?id=OIF.4mKvbMCaR9%2bNDhGfJyI8og&rs=1&pid=ImgDetMain"
         }
@@ -31,6 +33,7 @@ export const productsList = [
         price: "9.99",
         colors: ["#C0392B", "#8E44AD", "#D35400"],
         category: {
+            id: "2",
             name: "Cosmetics",
             imageURL: "https://png.pngtree.com/background/20230612/original/pngtree-various-makeup-products-lie-on-a-table-on-dark-picture-image_3185889.jpg"
         }
@@ -43,6 +46,7 @@ export const productsList = [
         price: "29.99",
         colors: ["#17202A", "#E74C3C", "#F4D03F"],
         category: {
+            id: "1",
             name: "Clothing",
             imageURL: "https://th.bing.com/th?id=OIF.4mKvbMCaR9%2bNDhGfJyI8og&rs=1&pid=ImgDetMain"
         }
@@ -55,6 +59,7 @@ export const productsList = [
         price: "14.99",
         colors: ["#FAD7A0", "#F5CBA7"],
         category: {
+            id: "2",
             name: "Cosmetics",
             imageURL: "https://png.pngtree.com/background/20230612/original/pngtree-various-makeup-products-lie-on-a-table-on-dark-picture-image_3185889.jpg"
         }
@@ -64,9 +69,10 @@ export const productsList = [
         title: "Men's Jacket",
         description: "Stylish leather jacket for men.",
         imageURL: "https://lenful-platform.s3.ap-southeast-1.amazonaws.com/62ea369b635e7eb12d3e3ac7/633174eaa143f816d518b7f1/products/1679730642585.webp",
-        price:" 99.99",
+        price: " 99.99",
         colors: ["#000000", "#7B7D7D"],
         category: {
+            id: "1",
             name: "Clothing",
             imageURL: "https://th.bing.com/th?id=OIF.4mKvbMCaR9%2bNDhGfJyI8og&rs=1&pid=ImgDetMain"
         }
@@ -79,6 +85,7 @@ export const productsList = [
         price: "7.99",
         colors: ["#F1948A", "#E67E22"],
         category: {
+            id: "2",
             name: "Cosmetics",
             imageURL: "https://png.pngtree.com/background/20230612/original/pngtree-various-makeup-products-lie-on-a-table-on-dark-picture-image_3185889.jpg"
         }
@@ -91,6 +98,7 @@ export const productsList = [
         price: "59.99",
         colors: ["#34495E", "#EAECEE"],
         category: {
+            id: "1",
             name: "Clothing",
             imageURL: "https://th.bing.com/th?id=OIF.4mKvbMCaR9%2bNDhGfJyI8og&rs=1&pid=ImgDetMain"
         }
@@ -103,6 +111,7 @@ export const productsList = [
         price: "19.99",
         colors: ["#5DADE2", "#AF7AC5", "#E74C3C"],
         category: {
+            id: "2",
             name: "Cosmetics",
             imageURL: "https://png.pngtree.com/background/20230612/original/pngtree-various-makeup-products-lie-on-a-table-on-dark-picture-image_3185889.jpg"
         }
@@ -115,6 +124,7 @@ export const productsList = [
         price: "29.99",
         colors: ["#F5B041", "#2C3E50"],
         category: {
+            id: "1",
             name: "Clothing",
             imageURL: "https://th.bing.com/th?id=OIF.4mKvbMCaR9%2bNDhGfJyI8og&rs=1&pid=ImgDetMain"
         }
@@ -127,6 +137,7 @@ export const productsList = [
         price: "11.99",
         colors: ["#000000"],
         category: {
+            id:"2",
             name: "Cosmetics",
             imageURL: "https://png.pngtree.com/background/20230612/original/pngtree-various-makeup-products-lie-on-a-table-on-dark-picture-image_3185889.jpg"
         }
@@ -139,6 +150,7 @@ export const productsList = [
         price: "89.99",
         colors: ["#17202A", "#E74C3C"],
         category: {
+            id: "1",
             name: "Clothing",
             imageURL: "https://th.bing.com/th?id=OIF.4mKvbMCaR9%2bNDhGfJyI8og&rs=1&pid=ImgDetMain"
         }
@@ -151,6 +163,7 @@ export const productsList = [
         price: "8.99",
         colors: ["#F4ECF7", "#F9E79F"],
         category: {
+            id: "2",
             name: "Cosmetics",
             imageURL: "https://png.pngtree.com/background/20230612/original/pngtree-various-makeup-products-lie-on-a-table-on-dark-picture-image_3185889.jpg"
         }
@@ -163,6 +176,7 @@ export const productsList = [
         price: "199.99",
         colors: ["#34495E", "#D5DBDB"],
         category: {
+            id: "3",
             name: "Accessories",
             imageURL: "https://d2hg8ctx8thzji.cloudfront.net/anyjunction.com/wp-content/uploads/2020/11/6CommonlyUsedAccessoriestoChooseFrom-763x474.jpg"
         }
@@ -175,6 +189,7 @@ export const productsList = [
         price: "39.99",
         colors: ["#1F618D", "#D35400"],
         category: {
+            id: "3",
             name: "Accessories",
             imageURL: "https://d2hg8ctx8thzji.cloudfront.net/anyjunction.com/wp-content/uploads/2020/11/6CommonlyUsedAccessoriestoChooseFrom-763x474.jpg"
         }
@@ -187,6 +202,7 @@ export const productsList = [
         price: "299.99",
         colors: ["#1C2833", "#D6DBDF"],
         category: {
+            id: "1",
             name: "Clothing",
             imageURL: "https://th.bing.com/th?id=OIF.4mKvbMCaR9%2bNDhGfJyI8og&rs=1&pid=ImgDetMain"
         }
@@ -199,6 +215,7 @@ export const productsList = [
         price: "69.99",
         colors: ["#F7DC6F"],
         category: {
+            id: "3",
             name: "Accessories",
             imageURL: "https://d2hg8ctx8thzji.cloudfront.net/anyjunction.com/wp-content/uploads/2020/11/6CommonlyUsedAccessoriestoChooseFrom-763x474.jpg"
         }
@@ -211,6 +228,7 @@ export const productsList = [
         price: "6.99",
         colors: ["#E74C3C", "#F5B041"],
         category: {
+            id: "2",
             name: "Cosmetics",
             imageURL: "https://png.pngtree.com/background/20230612/original/pngtree-various-makeup-products-lie-on-a-table-on-dark-picture-image_3185889.jpg"
         }
@@ -223,6 +241,7 @@ export const productsList = [
         price: "49.99",
         colors: ["#1C2833", "#FDFEFE"],
         category: {
+            id: "3",
             name: "Accessories",
             imageURL: "https://d2hg8ctx8thzji.cloudfront.net/anyjunction.com/wp-content/uploads/2020/11/6CommonlyUsedAccessoriestoChooseFrom-763x474.jpg"
         }
@@ -230,30 +249,30 @@ export const productsList = [
 ];
 
 
-export const formInputList=[
+export const formInputList = [
     {
-        id:"title",
-        name:"title",
-        lable:"Product Title",
-        type:"text"
+        id: "title",
+        name: "title",
+        lable: "Product Title",
+        type: "text"
     },
     {
-        id:"description",
-        name:"description",
-        lable:"Product Description",
-        type:"text"
+        id: "description",
+        name: "description",
+        lable: "Product Description",
+        type: "text"
     },
     {
-        id:"image",
-        name:"imageURL",
-        lable:"Image Url",
-        type:"text"
+        id: "image",
+        name: "imageURL",
+        lable: "Image Url",
+        type: "text"
     },
     {
-        id:"price",
-        name:"price",
-        lable:"Product Price",
-        type:"text"
+        id: "price",
+        name: "price",
+        lable: "Product Price",
+        type: "text"
     },
 ]
 
@@ -294,17 +313,17 @@ export const Colors: string[] = [
 
 export const Categories = [
     {
-        id:"1",
+        id: "1",
         name: "Clothing",
         imageURL: "https://th.bing.com/th?id=OIF.4mKvbMCaR9%2bNDhGfJyI8og&rs=1&pid=ImgDetMain"
     },
     {
-        id:"2",
+        id: "2",
         name: "Cosmetics",
         imageURL: "https://png.pngtree.com/background/20230612/original/pngtree-various-makeup-products-lie-on-a-table-on-dark-picture-image_3185889.jpg"
     },
     {
-        id:"3",
+        id: "3",
         name: "Accessories",
         imageURL: "https://d2hg8ctx8thzji.cloudfront.net/anyjunction.com/wp-content/uploads/2020/11/6CommonlyUsedAccessoriestoChooseFrom-763x474.jpg"
     }

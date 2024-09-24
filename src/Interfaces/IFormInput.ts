@@ -1,6 +1,8 @@
+import { InputsName } from "../Types/InputsName";
+
 export interface IFormInput {
     id: string,
-    name: "title" | "description" | "imageURL" | "price",
+    name: InputsName,
     lable: string,
     type: string
 }

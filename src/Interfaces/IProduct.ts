@@ -1,12 +1,11 @@
+import { ICategory } from "./ICategory";
+
 export interface IProduct {
-    id?: number | undefined;
+    id?: string | undefined;
     title: string;
     description: string;
     imageURL: string;
     price: string;
     colors: string[];
-    category: {
-        name: string;
-        imageURL: string;
-    };
+    category: ICategory
 }
