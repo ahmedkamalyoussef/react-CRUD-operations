@@ -29,7 +29,7 @@ function ProductCard({ product, OpenEditModal, setProductToEdit, setSelectedCate
             <Image imgeURL={imageURL} alt="prod" classes="rounded-md max-h-60" />
             <h3 className="flex-grow">{title}</h3>
             <p className="flex-grow">{TextSlicer(description)}</p>
-            <div className="flex items-center my-4 space-x-2 flex-grow">
+            <div className="flex items-center my-4 flex-wrap space-x-2 flex-grow">
                 {colors.map((color, index) => {
                     return (
                         <ColorCircle color={color} key={index} />

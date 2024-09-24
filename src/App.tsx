@@ -132,9 +132,8 @@ function App() {
       setErrs(errors);
       return;
     }
-    setProductToEdit({...productToEdit,colors:editTempColors,category:selectedCategory})
     const updatedProducts = [...tempProductsList];
-    updatedProducts[prodToEditIndex] = {...productToEdit};
+    updatedProducts[prodToEditIndex] = {...productToEdit,colors:editTempColors,category:selectedCategory};
     setTempProductsList(updatedProducts);
     setProductToEdit(defaultProduct);
     setEditTempColors([]);
