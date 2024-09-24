@@ -10,12 +10,13 @@ interface IProps {
     OpenEditModal: () => void,
     setProductToEdit: (product: IProduct) => void,
     setSelectedCategory: (category: ICategory) => void,
+    setConfirmModal: (check:boolean) => void,
     setEditTempColors: (colors: string[]) => void,
     index: number,
     setProdToEditIndex: (index: number) => void
 }
 
-function ProductCard({ product, OpenEditModal, setProductToEdit, setSelectedCategory, setEditTempColors, setProdToEditIndex, index }: IProps) {
+function ProductCard({ product, OpenEditModal, setProductToEdit, setSelectedCategory, setEditTempColors,setConfirmModal, setProdToEditIndex, index }: IProps) {
     const { category, colors, description, imageURL, price, title } = product;
     const onEdit = () => {
         OpenEditModal();
@@ -23,6 +24,10 @@ function ProductCard({ product, OpenEditModal, setProductToEdit, setSelectedCate
         setSelectedCategory(product.category);
         setEditTempColors(product.colors);
         setProdToEditIndex(index);
+    }
+    const onDelete=()=>{
+        setProductToEdit(product);
+        setConfirmModal(true);
     }
     return (
         <div className="max-w-40 text-xs md:text-sm md:w-50 md:max-w-lg lg:w-60 mx-auto border rounded-md p-2 flex flex-col h-full">
@@ -45,7 +50,7 @@ function ProductCard({ product, OpenEditModal, setProductToEdit, setSelectedCate
             </div>
             <div className="flex items-center justify-between space-x-2 mt-2">
                 <Button classes="bg-indigo-700" onClick={onEdit}>Edit</Button>
-                <Button classes="bg-red-700">Delete</Button>
+                <Button classes="bg-red-700" onClick={onDelete}>Delete</Button>
             </div>
         </div>
     );

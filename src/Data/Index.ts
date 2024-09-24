@@ -278,37 +278,28 @@ export const formInputList = [
 
 
 export const Colors: string[] = [
-    "#FF5733", // Red-Orange
-    "#33FF57", // Lime Green
-    "#3357FF", // Blue
-    "#FF33A1", // Pink
-    "#33FFF1", // Cyan
-    "#FFD733", // Yellow
-    "#FF5733", // Orange
-    "#8D33FF", // Purple
-    "#FFB833", // Amber
-    "#33FFB8", // Mint Green
-    "#B833FF", // Violet
-    "#33B8FF", // Sky Blue
-    "#FF338D", // Magenta
-    "#5733FF", // Indigo
-    "#FF3357",  // Coral
-    "#FF9333", // Light Orange
-    "#33FF93", // Light Green
-    "#3393FF", // Light Blue
-    "#FF33D7", // Hot Pink
-    "#33FFD7", // Aquamarine
-    "#D7FF33", // Lime Yellow
-    "#D733FF", // Electric Purple
-    "#FF33B8", // Deep Pink
-    "#33FF5E", // Fresh Green
-    "#5E33FF", // Electric Indigo
-    "#FFB833", // Honey Yellow
-    "#33A1FF", // Azure
-    "#FF3385", // Deep Rose
-    "#33FFC4", // Turquoise
-    "#FFC433"  // Gold
+    "#000000", // Black
+    "#FFFFFF", // White
+    "#808080", // Gray
+    "#FF0000", // Red
+    "#00FF00", // Green
+    "#0000FF", // Blue
+    "#FFFF00", // Yellow
+    "#FFA500", // Orange
+    "#800080", // Purple
+    "#00FFFF", // Cyan
+    "#FFC0CB", // Pink
+    "#A52A2A", // Brown
+    "#FFD700", // Gold
+    "#008000", // Dark Green
+    "#FF6347", // Tomato
+    "#4682B4", // Steel Blue
+    "#B22222", // Firebrick
+    "#D3D3D3", // Light Gray
+    "#2F4F4F", // Dark Slate Gray
+    "#F0E68C"  // Khaki
 ];
+
 
 
 export const Categories = [

@@ -12,6 +12,7 @@ import { v4 as uuid } from 'uuid';
 import { MouseEvent } from "react";
 import SelectMenu from './Components/UI/SelectMenu';
 import { InputsName } from './Types/InputsName';
+import toast,{ Toaster } from 'react-hot-toast';
 
 function App() {
   const defaultProduct = {
@@ -28,6 +29,7 @@ function App() {
   };
   const [selectedCategory, setSelectedCategory] = useState(Categories[0])
   const [isOpen, closeModal] = useState(false)
+  const [confirmModal, setConfirmModal] = useState(false)
   const [prodToEditIndex, setProdToEditIndex] = useState<number>(0)
   const [isOpenEdit, closeEditModal] = useState(false)
   const [tempColors, setTempColors] = useState<string[]>([]);
@@ -44,9 +46,6 @@ function App() {
   function open() {
     closeModal(true)
   }
-  function openEdit() {
-    closeEditModal(true)
-  }
   const onCancelHandler = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setProduct(defaultProduct);
@@ -60,6 +59,26 @@ function App() {
     )
     closeModal(false);
   };
+  const onCancelConfirmHandler = () => {
+    setConfirmModal(false);
+  };
+  function openEdit() {
+    closeEditModal(true)
+  }
+  const DeleteHandler = () => {
+    const filterdProducts = tempProductsList.filter(product => product.id != productToEdit.id);
+    setTempProductsList(filterdProducts);
+    onCancelConfirmHandler();
+    toast("Deleted successfully!", {
+      style: {
+        background: '#f44336', // Red for Delete
+        color: '#ffffff',
+        // padding: '16px',
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      },
+    });
+  }
   const onCancelEditHandler = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setProduct(defaultProduct);
@@ -117,6 +136,16 @@ function App() {
     )
     setProduct(defaultProduct);
     setTempColors([]);
+    toast("Added successfully!", {
+      style: {
+        background: '#4caf50', // Green for Add
+        color: '#ffffff',
+        // padding: '16px',
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      },
+    });
+
     closeModal(false);
   }
   const onSubmetEditHandler = (e: FormEvent<HTMLFormElement>): void => {
@@ -133,14 +162,24 @@ function App() {
       return;
     }
     const updatedProducts = [...tempProductsList];
-    updatedProducts[prodToEditIndex] = {...productToEdit,colors:editTempColors,category:selectedCategory};
+    updatedProducts[prodToEditIndex] = { ...productToEdit, colors: editTempColors, category: selectedCategory };
     setTempProductsList(updatedProducts);
     setProductToEdit(defaultProduct);
     setEditTempColors([]);
+    toast("Updated successfully!", {
+      style: {
+        background: '#2196F3', // Blue for Update
+        color: '#ffffff',
+        // padding: '16px',
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      },
+    });
     closeEditModal(false);
   }
   const products = tempProductsList.map((p, index) => <ProductCard key={p.id} product={p} OpenEditModal={openEdit} index={index}
-    setProductToEdit={setProductToEdit} setSelectedCategory={setSelectedCategory} setEditTempColors={setEditTempColors} setProdToEditIndex={setProdToEditIndex} />);
+    setProductToEdit={setProductToEdit} setSelectedCategory={setSelectedCategory} setConfirmModal={setConfirmModal}
+    setEditTempColors={setEditTempColors} setProdToEditIndex={setProdToEditIndex} />);
   const colors = Colors.map((color, index) => <ColorCircle key={index} color={color} onClick={() => {
     if (tempColors.includes(color)) {
       setTempColors([...tempColors.filter(c => c != color)])
@@ -151,7 +190,7 @@ function App() {
     if (editTempColors.includes(color)) {
       setEditTempColors([...editTempColors.filter(c => c != color)])
     } else
-    setEditTempColors([...editTempColors, color])
+      setEditTempColors([...editTempColors, color])
   }} />);
   const inputs = formInputList.map(input => (
     <div key={input.id} className="flex flex-col">
@@ -222,6 +261,14 @@ function App() {
           </div>
         </form>
       </Modal>
+      {/* delete  */}
+      <Modal isOpen={confirmModal} closeModal={close} title='Are you sure,you want to delete this item ?'>
+        <div className="flex items-center justify-between space-x-2 mt-2">
+          <Button classes="bg-red-700 hover:bg-red-800" onClick={DeleteHandler}>Delete!</Button>
+          <Button classes="bg-gray-400 hover:bg-gray-500" onClick={onCancelConfirmHandler}>Cancel</Button>
+        </div>
+      </Modal>
+      <Toaster/>
     </main>
   )
 }

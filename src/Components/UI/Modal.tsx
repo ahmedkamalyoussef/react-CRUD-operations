@@ -10,6 +10,7 @@ function Modal({ children, isOpen, title }: IProps) {
     const [closed, closeModal] = useState(false)
     function close() {
         closeModal(false)
+        closed;
     }
     return (
         <>
